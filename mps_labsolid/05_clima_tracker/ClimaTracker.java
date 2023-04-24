@@ -1,22 +1,14 @@
 public class ClimaTracker {
     String condicaoAtual;
-    Phone phone;
-    EmailCliente emailCliente;
+    AlertaClima alertaClima;
 
-    public ClimaTracker() {
-        phone = new Phone();
-        emailCliente = new EmailCliente();
+    public ClimaTracker(AlertaClima alertaClima) {
+        this.alertaClima = alertaClima;
     }
 
     public void setCondicaoAtual(String condicaoClimatica) {
         this.condicaoAtual = condicaoClimatica;
-        if (condicaoClimatica == "chovendo") {
-            String alerta = phone.geraClimaAlerta(condicaoClimatica);
-            System.out.print(alerta);
-        }
-        if (condicaoClimatica == "ensolarado") {
-            String alerta = emailCliente.geraClimaAlerta(condicaoClimatica);
-            System.out.print(alerta);
-        }
+        String alerta = alertaClima.geraClimaAlerta(condicaoClimatica);
+        System.out.print(alerta);
     }
 }
