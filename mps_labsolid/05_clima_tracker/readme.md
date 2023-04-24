@@ -1,3 +1,5 @@
+# Explicação
+
 Princípio da Inversão de Dependência (DIP):
 
 As classes de alto nível não devem depender de classes de baixo nível. Ambos devem depender de abstrações. Isso significa que as classes devem depender de interfaces ou classes abstratas em vez de classes concretas. 
