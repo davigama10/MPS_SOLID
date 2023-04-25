@@ -1,4 +1,4 @@
-public class Pinguin implements Ave {
+public class Pinguin implements Ave_Plumada {
     String localizacaoAtual;
     int numeroDePenas;
 
@@ -8,10 +8,6 @@ public class Pinguin implements Ave {
 
     public void trocaPlumagem() {
         this.numeroDePenas -= 1;
-    }
-
-    public void voa() {
-        throw new UnsupportedOperationException();
     }
 
     public void nada() {
