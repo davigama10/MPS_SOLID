@@ -1,4 +1,4 @@
-public class Aguia implements Ave {
+public class Aguia implements Ave_Voadora, Ave_Plumada {
     String localizacaoAtual;
     int numeroDePenas;
 
