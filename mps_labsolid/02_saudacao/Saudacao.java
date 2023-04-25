@@ -1,22 +1,45 @@
-public class Saudacao {
-    String formalidade;
+// Código com alterações de acordo com o princípio Open/Closed Principle
 
-    public String saudar () {
-        if (this.formalidade == "formal") {
-            return "Bom dia, sr.";
-        }
-        else if (this.formalidade == "casual") {
-            return "E aí, blz?";
-        }
-        else if (this.formalidade == "intimo") {
-            return "Oi querida!";
-        }
-        else {
-            return "Oi.";
-        }
+public interface EscolherSaudacao {
+    public String saudar();
+}
+
+public class SaudacaoFormal implements EscolherSaudacao {
+    @Override
+    public String saudar() {
+        return "Bom dia, sr.";
+    }
+}
+
+public class SaudacaoCasual implements EscolherSaudacao {
+    @Override
+    public String saudar() {
+        return "E aí, blz?";
+    }
+}
+
+public class SaudacaoIntima implements EscolherSaudacao {
+    @Override
+    public String saudar() {
+        return "Oi querida!";
+    }
+}
+
+public class SaudacaoQualquer implements EscolherSaudacao {
+    @Override
+    public String saudar() {
+        return "Oi.";
+    }
+}
+
+public class Saudacao {
+    private EscolherSaudacao escolherSaudacao;
+
+    public Saudacao(EscolherSaudacao escolherSaudacao) {
+        this.escolherSaudacao = escolherSaudacao;
     }
 
-    public void setFormalidade(String formalidade) {
-        this.formalidade = formalidade;
+    public String saudar() {
+        return this.escolherSaudacao.saudar();
     }
 }
